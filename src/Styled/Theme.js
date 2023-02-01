@@ -1,4 +1,4 @@
-const tokens = {
+const theme = {
     fontSizes: {
       1: '10px',
       2: '12px',
@@ -24,4 +24,4 @@ const tokens = {
     // ...rest of the tokens
   }
   
-  export { tokens }
+  export { theme }

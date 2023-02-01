@@ -7,7 +7,6 @@ function Main() {
     <>
     <Container>
               <h1>WALLYWOOD</h1>
-              <Navbar />
     </Container>
     
     </>
