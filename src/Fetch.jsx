@@ -1,27 +1,45 @@
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Poster from './Poster'
 const url = 'http://localhost:4000/poster'
 
 function Fetch() {
-    const [poster, setPoster] = useState(null)
+    const [poster, setPoster] = useState([])
     
 useEffect(() => {
-    const getPosters = () => {
-        axios.get(url).then((response) => {
-            setPoster(response.data);
-          })};
+    const getPosters = async () => {
+const response = await axios.get(url)
+try {
+  if (response.data) {
+    
+    setPoster(response.data)
+    
+    
+  }
+} catch (error) {
+  console.log(error);
+}
+
+    };
           getPosters()
-          console.log(poster[0].genres[0].title);
+    
 }, [])
-
-
+let array = []
+  for (let i = 0; i < 10; i++) {
+       const element = poster[i]
+       array.push(element)
+      
+   }
+     for (var index = 0; index < array.length; i++) {
+          const genre = element.genres[index]
+          console.log(genre.title);
+      } 
 
   return (
     <>
-    {poster.map(item => (item,index)
-    console.log(item)
-    )}
+    
+    
+    
 
     
     <Poster 
