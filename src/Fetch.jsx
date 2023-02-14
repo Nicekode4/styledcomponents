@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Poster from './Poster'
+import { Button } from './Styled/Button.style'
 const url = 'http://localhost:4000/poster'
 
 function Fetch() {
@@ -25,31 +26,21 @@ try {
     
 }, [])
 let array = []
-  for (let i = 0; i < 10; i++) {
-       const element = poster[i]
-       array.push(element)
-      
-   }
-     for (var index = 0; index < array.length; i++) {
-          const genre = element.genres[index]
-          console.log(genre.title);
-      } 
+let array2 = []
 
-  return (
-    <>
-    
-    
-    
 
-    
-    <Poster 
-    imgsrc={"https://info.kinorevuen.dk/wp-content/uploads/2021/02/species-2.jpg"}
-    title="title"
-    description="Desc"
-    genre="genre"
-    />
-    </>
-  )
+
+console.log(array);
+
+for (let i = 0; i <= 10; i++) {
+  console.log(i);
+  return (<Poster 
+imgsrc={"https://info.kinorevuen.dk/wp-content/uploads/2021/02/species-2.jpg"}
+title={i}
+description="Desc"
+genre="Genre"
+/>)
+ }
 }
 
 export default Fetch
